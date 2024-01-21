@@ -1,0 +1,26 @@
+﻿@using Microsoft.AspNetCore.Identity;
+@using FinalProject.EntityF;
+@using FinalProject.Models;
+@inject SignInManager<User> SignInManager;
+
+
+<ul class="navbar-nav">
+    @if (SignInManager.IsSignedIn(User))
+    {
+        <li>
+            <a class="nav-link text-light" asp-controller="Account" asp-action="SignOut">SignOut</a>
+        </li>
+    }
+    else
+    {
+        <li>
+            <a class="nav-link text-light" asp-controller="Account" asp-action="Login">Login</a>
+        </li>
+        <li>
+            <a class="nav-link text-light" asp-controller="Account" asp-action="Register">Register</a>
+        </li>
+    }
+
+
+
+</ul>

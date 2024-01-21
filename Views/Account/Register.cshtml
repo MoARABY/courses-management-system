@@ -1,0 +1,49 @@
+﻿@using FinalProject.EntityF
+@model UserRegisterationModel
+<h1 class="text-primary">Register</h1>
+<div>
+    <form asp-action="Register">
+        <div class="form-group">
+            <label asp-for="First_Name" class="control-label text-light"></label>
+            <input asp-for="First_Name" class="form-control" />
+            <span asp-validation-for="First_Name" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="Last_Name" class="control-label text-light"></label>
+            <input asp-for="Last_Name" class="form-control" />
+            <span asp-validation-for="Last_Name" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="phone" class="control-label text-light"></label>
+            <input asp-for="phone" class="form-control" />
+            <span asp-validation-for="phone" class="text-danger"></span>
+        </div>
+
+        <div class="form-group">
+            <label asp-for="Type" class="control-label text-light"></label>
+            @Html.DropDownListFor(m=>m.Type ,Html.GetEnumSelectList<UserType>(),"Type",new { @class="form-control"})
+            <span asp-validation-for="Type" class="text-danger"></span>
+        </div>
+
+        <div class="form-group">
+            <label asp-for="Email" class="control-label text-light"></label>
+            <input asp-for="Email" class="form-control" />
+            <span asp-validation-for="Email" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="Passsword" class="control-label text-light"></label>
+            <input asp-for="Passsword" class="form-control" />
+            <span asp-validation-for="Passsword" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="ConfirmPassword" class="control-label text-light"></label>
+            <input asp-for="ConfirmPassword" class="form-control" />
+            <span asp-validation-for="ConfirmPassword" class="text-danger"></span>
+        </div>
+        <br />
+        <div class="form-group">
+            <input type="submit" value="Create" class="btn btn-primary" />
+            <a class="btn btn-light m-4" asp-controller="Course" asp-action="Index">Back</a>
+        </div>
+    </form>
+</div>

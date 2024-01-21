@@ -1,0 +1,28 @@
+﻿@using FinalProject.EntityF
+@model List<Instuctor>
+<h1 class="text-primary">Instructurs</h1>
+<br />
+<table class="table table-dark table-striped-columns">
+    <thead>
+        <tr>
+            <th>Instructur_Name</th>
+            <th>phone</th>
+        </tr>
+    </thead>
+    <tbody>
+            @foreach(var item in Model)
+            {
+            <tr>
+                <td>@item.Instructur_Name</td>
+                <td>@item.Phone</td>
+            </tr>
+            }
+
+    </tbody>
+</table>
+<div>
+    <a class="btn btn-light m-4" asp-action="Index">Back</a>
+</div>
+
+
+

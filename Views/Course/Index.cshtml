@@ -1,0 +1,61 @@
+﻿@using FinalProject.Models;
+@using FinalProject.EntityF;
+@using System.Security.Claims;
+@model List<CourseDetailsModule>
+
+    <div style="display:flex; align-items:center; justify-content:space-between;">
+    <h1 class="text-primary">COURSES</h1>
+    @if (User.Claims.Any(c => c.Type == ClaimTypes.Role && c.Value == nameof(UserType.instructur)))
+    {
+        <a class="btn btn-primary" asp-action="Create">Create</a>
+        @* <a class="btn btn-dark" asp-action="Edit" asp-route-id="@item.Course_Id">Edit</a>*@
+    }
+    else
+    {
+        <a class="btn btn-primary" asp-action="Enroll">Enroll</a>
+    }
+
+    </div>
+    <br />
+
+    @*@<h2>Claims</h2>
+    <ul>
+        @foreach(var claim in User.Claims)
+       {
+        <li><strong>  @claim.Type :</strong> @claim.Value</li>
+       }
+    </ul>*@
+<table class="table table-dark table-striped-columns">
+    <thead>
+        <tr>
+            <th class="text-light">Name</th>
+            <th class="text-light">Description</th>
+           @* <th class="text-light">Duration</th> *@
+            @*  <th class="text-light">Capacity</th> *@
+            <th class="text-light">StartDate</th>
+            <th class="text-light">EndDate</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr style="position: relative;">
+                <td>@item.Course_Name</td>
+                <td>@item.Description</td>
+                @* <td>@item.Duration</td>*@
+                @*  <td>@item.Capacity</td>*@
+                <td>@item.StartDate</td>
+                <td>@item.EndDate</td>
+                <td style="position: absolute;right: 0px;">
+                    <a class="btn btn-light" asp-action="Details" asp-route-id="@item.Course_Id">Details</a>
+
+                    @if (User.Claims.Any(c => c.Type == ClaimTypes.Role && c.Value == nameof(UserType.instructur)))
+                    {
+                        <a class="btn btn-light" asp-action="Edit" asp-route-id="@item.Course_Id">Edit</a>
+                    }
+
+                </td>
+            </tr>
+        } 
+    </tbody>  
+</table>

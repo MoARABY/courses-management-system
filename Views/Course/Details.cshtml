@@ -1,0 +1,29 @@
+﻿@model CourseDetailsModule
+
+<h1 class="text-primary"> CourseDetails</h1>
+<br />
+<table class="table table-dark table-striped-columns">
+    <thead>
+        <tr>
+            <th>CourseName</th>
+            <th>Description</th>
+            <th>Duration</th>
+            <th>Capacity</th>
+            <th>StartDate</th>
+            <th>EndDate</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>@Model.Course_Name</td>
+            <td>@Model.Description</td>
+            <td>@Model.Duration</td>
+            <td>@Model.Capacity</td>
+            <td>@Model.StartDate</td>
+            <td>@Model.EndDate</td>
+        </tr>
+    </tbody>
+</table>
+<div>
+    <a class="btn btn-light m-4" asp-action="Index">Back</a>
+</div>
