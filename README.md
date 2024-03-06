@@ -11,16 +11,9 @@
   <li>License</li>
 </ul>
 
-
-
-
-
-
-
-
 <h2>Features</h2>
 
-<h3>User Authentication</h3>: Users can register and log in securely.
+<h3>User Authentication:</h3> Users can register and log in securely.
 <h3Authorization:></h3> Role-based access control ensures that only authorized users can access certain features.
 <h3>Course Management:</h3> Add, edit, view, and delete courses.
 <h3>Instructor Management:</h3> Manage instructors, assign courses to instructors.
