@@ -23,7 +23,7 @@
 
 <h2>Installation</h2>
 To run this application locally, follow these steps:....
-- Clone the repository: git clone [https://github.com/your/repository.git](https://github.com/MoARABY/courses-management-system)
+- Clone the repository: git clone https://github.com/MoARABY/courses-management-system
 - Open the project in Visual Studio or any preferred IDE.
 - Ensure you have .NET 7 and SQL Server installed on your machine.
 - Update the connection string in appsettings.json to point to your SQL Server instance.
